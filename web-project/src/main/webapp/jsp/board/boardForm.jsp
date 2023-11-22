@@ -15,13 +15,16 @@
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb justify-content-lg-end mb-0 px-0 bg-light">
                     <li class="breadcrumb-item"><a class="text-dark" href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-dark" href="cart.html">Board</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Board</li>
                   </ol>
                 </nav>
               </div>
             </div>
           </div>
  		</section>
+ 		
+ 		
+        
 </div>
 
 

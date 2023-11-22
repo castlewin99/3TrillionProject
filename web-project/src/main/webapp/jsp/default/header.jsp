@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>three trillion | Ecommerce bootstrap template</title>
+    <title>Boutique | Ecommerce bootstrap template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -39,7 +39,7 @@
  <!-- navbar-->
       <header class="header bg-white">
         <div class="container px-lg-3">
-          <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0"><a class="navbar-brand" href="${context }index"><span class="fw-bold text-uppercase text-dark">3Trillion</span></a>
+          <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0"><a class="navbar-brand" href="${context }index"><span class="fw-bold text-uppercase text-dark">3 Trillion</span></a>
             <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto">
@@ -66,13 +66,14 @@
               <ul class="navbar-nav ms-auto">               
                 <li class="nav-item"><a class="nav-link" href="cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Cart<small class="text-gray fw-normal">(2)</small></a></li>
                 <li class="nav-item"><a class="nav-link" href="#!"> <i class="far fa-heart me-1"></i><small class="text-gray fw-normal"> (0)</small></a></li>
-                <li class="nav-item"><a class="nav-link" onclick="location.href='userInfo2?id=${member.id }&currentPage=${currentPage }'"> <i class="fas fa-user me-1 text-gray fw-normal"></i>${sessionScope.id } 님</a></li>
+                
                 	<c:choose>
 						<c:when test="${empty sessionScope.id }">
 							<li class="nav-item"><a class="nav-link" href="${context }login"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Login</a></li>
 						</c:when>
 						<c:otherwise>
-							<li class="nav-item"><a class="nav-link" href="${context }logout"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Logout</a></li>
+							<li class="nav-item"><a class="nav-link" onclick="location.href='userInfo2?id=${member.id }&currentPage=${currentPage }'"><i class="fas fa-user me-1 text-gray fw-normal"></i>${sessionScope.id } 님</a></li>
+							<li class="nav-item"><a class="nav-link" href="${context }logout">Logout</a></li>
 						</c:otherwise>
 					</c:choose>
 					

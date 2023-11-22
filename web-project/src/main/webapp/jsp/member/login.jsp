@@ -5,23 +5,22 @@
 
       <div class="container">
         <!-- HERO SECTION-->
-        <section class="py-5 bg-light">
+        <section class="py-5">
           <div class="container">
             <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
-				<section class="py-5">
 					<div class="row">
-					   <div class="col-lg-8">
+					   <div align="center">
 						<h1>로그인</h1>
 						<table >
 						<tr><td>
 							<font color="red" >${msg }</font>
 						</td></tr>
-						<tr><td>
+						<tr align="center" width="500" ><td>
 						<form action="loginProc" method="post" id="f">
 							<input class="form-control form-control-lg" type="text" name="id" placeholder="아이디" id="id"><br>
 							<input class="form-control form-control-lg" type="password" name="pw" placeholder="비밀번호" id="pw"><br>
-							<input  class="btn btn-dark" type="button" value="로그인" onclick="loginCheck()">
-							<input  class="btn btn-dark" type="button" value="취소" onclick="location.href='index'"><br>
+							<input class="btn btn-dark" type="button" value="로그인" onclick="loginCheck()">
+							<input class="btn btn-dark" type="button" value="회원가입" onclick="location.href='regist'"><br>
 						</form>
 						</td></tr>
 					
@@ -30,8 +29,11 @@
 							Client_ID    : <REST API Key>
 							Redirect_URL : <REDIRECT URL> 
 						 -->
-					
-						<tr><td>
+						<tr>
+						<td> </td>
+						</tr>
+						<tr>
+							<td width="300" align="center">
 							<a href="https://kauth.kakao.com/oauth/authorize?response_type=code
 							&client_id=7f2d4b83f702d2f483887509dbe71113
 							&redirect_uri=http://localhost/kakaoLogin">
@@ -41,9 +43,9 @@
 						
 						</table>
 						</div>  
-					  </div>
-				</section>	 
-			</div> 
-		</div>	
+		  	 	</div>
+			</div>
+		   </div>
+		</section>	 	
 	   </div>
 <c:import url="/footer" />
