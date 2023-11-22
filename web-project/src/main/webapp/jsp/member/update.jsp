@@ -44,46 +44,81 @@
               <div class="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0">
                 <form class="row row-cols-lg-auto g-3 align-items-center" action="updateProc" method="post" id="f"> 
                 <div class="row">   
+                <!-- PRODUCT-->
+                  <div class="col-lg-1 col-sm-2">
+                    <div class="product text">
+                      <div class="mb-3 position-relative">
+                      </div>
+                    </div>
+                  </div>
                   <!-- PRODUCT-->
-                  <div class="col-lg-6 col-sm-9">
-                    <div class="product text-center">
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="product text">
                       <div class="mb-3 position-relative">
                         <div class="badge text-white bg-"></div>			
-                      			<label class="form-label text-sm text-uppercase" align="left" for="firstName">아이디 (*필수 항목) </label>  
+                      			<label class="form-label text-sm" align="left" for="firstName">아이디 (*필수 항목) </label>  
 							    <input class="form-control form-control-lg" type="text" value="${sessionScope.id }" id="id"> 
 								<br>
-								<label class="form-label text-sm text-uppercase" align="left" for="이름">이름 </label>
+								<label class="form-label text-sm" align="left" for="이름">이름 </label>
 								<input class="form-control form-control-lg" type="text" name="userName" id="userName" value="${sessionScope.userName }" >
                       </div>
                     </div>
                   </div>
-                  <!-- PRODUCT-->
-                  <div class="col-lg-6 col-sm-9">
-                    <div class="product text-center">
+                   <!-- PRODUCT-->
+                  <div class="col-lg-1 col-sm-1">
+                    <div class="product text">
+                      <div class="mb-3 position-relative">
+                      </div>
+                    </div>
+                  </div>
+                     <!-- PRODUCT-->
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="product text">
                       <div class="mb-3 position-relative">
                         <div class="badge text-white bg-"></div>			
-							<label class="form-label text-sm text-uppercase"  for="비밀번호">비밀번호 </label>
+							<label class="form-label text-sm" align="left" for="비밀번호">비밀번호 </label>
 							<input class="form-control form-control-lg" type="password" name="pw" placeholder="비밀번호" id="pw">
 							<br>
-							<label class="form-label text-sm text-uppercase"  for="비밀번호확인">비밀번호 확인 </label>
+							<label class="form-label text-sm" align="left" for="비밀번호확인">비밀번호 확인 </label>
 							<input class="form-control form-control-lg" type="password" name="confirm" placeholder="비밀번호 확인 " id="confirm" onchange="pwCheck()">
                       </div>
                     </div>
                   </div>
-                  
                   <!-- PRODUCT-->
-                  <div class="col-lg-12 col-sm-18">
-                    <div class="product text-center">
+                  <div class="col-lg-1 col-sm-2">
+                    <div class="product text">
+                      <div class="mb-3 position-relative">
+                      </div>
+                    </div>
+                  </div>	      
+
+                  <!-- PRODUCT-->
+                  <div class="col-lg-1 col-sm-2">
+                    <div class="product text">
+                      <div class="mb-3 position-relative">
+                      </div>
+                    </div>
+                  </div>
+                   <!-- PRODUCT-->
+                  <div class="col-lg-1 col-sm-2">
+                    <div class="product text">
+                      <div class="mb-3 position-relative">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- PRODUCT-->
+                  <div class="col-lg-9 col-sm-13">
+                    <div class="product text">
                       <div class="mb-3 position-relative">
                         <div class="badge text-white bg-"></div>			
-							<label class="form-label text-sm text-uppercase"  for="상세주소">상세 주소</label>
+							<label class="form-label text-sm" align="left"  for="상세주소">상세 주소</label>
 							<input class="form-control form-control-lg" type="text" name="address" value="${sessionScope.address }">
-							<label class="form-label text-sm text-uppercase"  for="전화번호">전화번호 </label>
+							<label class="form-label text-sm" align="left" for="전화번호">전화번호 </label>
 							<input class="form-control form-control-lg" type="text" name="mobile" value="${sessionScope.mobile }">
                       </div>
                     </div>
                   </div>
-               
+              
                   
                   <nav aria-label="Page navigation example">
                   <ul class="pagination justify-content-center justify-content-lg-end">        

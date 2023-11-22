@@ -3,17 +3,51 @@
 
 <c:import url="/header" />
 
-	<div align="center">
+
+  <div class="container">
+		
+		
+		<!-- HERO SECTION-->
+        <section class="py-5 bg-light">
+          <div class="container">
+            <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
+              <div class="col-lg-6">
+                <h1 class="h2 text-uppercase mb-0">MemberList</h1>
+              </div>
+              <div class="col-lg-6 text-lg-end">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-lg-end mb-0 px-0 bg-light">
+                    <li class="breadcrumb-item"><a class="text-dark" href="index">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">MemberList</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      <section class="py-5">
+
+            
+
+	<div class="row row-cols-lg-auto g-3 align-items-center" >
+    
+        <div class="col-lg-4" ></div>
+        <div class="col-lg-4" align = "center">
 		<font color="red" >${msg }</font>
-		<h1>회원 목록</h1>
+		<h1>회원 목록<br></h1>
+		</div>
+		<div class="col-lg-4" ></div>
+		<div class="col-lg-4" ></div>
+		<div class="col-lg-4" align = "center">
 		<c:choose>
 			<c:when test="${empty members }">
 				<h1> 등록된 데이터가 존재하지 않습니다. </h1>
 			</c:when>
 			<c:otherwise>
-				<table border=1>
+				<table class="table table-hover"  border=1>
 					<thead>
-						<tr>
+						<tr align="center">
 							<th>아이디</th>
 							<th>이름</th>
 							<th>전화번호</th>
@@ -21,7 +55,7 @@
 					</thead>
 					<tbody>
 						<c:forEach var="member" items="${ members}">
-							<tr>
+							<tr align="center">
 								<td onclick="location.href='userInfo?id=${member.id }&currentPage=${currentPage }'">
 									${member.id }
 								</td>
@@ -62,10 +96,18 @@
 							<input type="text" name="search" value="${search }"/>
 						</c:otherwise>
 					</c:choose>
-					<input type="submit" value="검색" />
+					<input type="submit"  class="btn btn-sm btn-dark" value="검색" />
 				</form>
 		</c:otherwise>
 	</c:choose>
 	</div>
+	   <div class="col-lg-4" ></div>
+	</div>
+
+	 
+	</section>
 	
+	
+	
+</div>
 <c:import url="/footer" />
