@@ -13,6 +13,9 @@ public interface IMemberMapper {
 	
 	// 회원정보 등록 
 	int registProc(MemberDTO member);
+
+	// 회원정보 삭제
+	int idCheck(String id);
 	
 	// 회원정보 출력
 	ArrayList<MemberDTO> memberInfo(@Param("begin")int begin, @Param("end")int end,
@@ -25,5 +28,6 @@ public interface IMemberMapper {
 	
 	// 회원정보 삭제
 	int deleteProc(String id);
+	
 	
 }

@@ -196,17 +196,18 @@
 	  	
 	  	$('#pwchk').keyup(function(){
 	  		let pw = $('#pw').val();
-		 	let pwchk = $('#pwchk').val();
+		 	  let pwchk = $('#pwchk').val();
 	  		
-	 		if(pw == pwchk){
-	 			$(".pw_ok").css("display", "inline-block");
-			$(".pw_ko").css("display", "none");
-			pwpass = 1;
-	 		} if (pw != pwchk){
-	 			$(".pw_ko").css("display", "inline-block");
-			$(".pw_ok").css("display", "none");
-			pwpass = 0;
-	 		}
+  	 		if(pw == pwchk){
+	   			$(".pw_ok").css("display", "inline-block");
+		  	  $(".pw_ko").css("display", "none");
+			    pwpass = 1;
+	 		    } 
+        if (pw != pwchk){
+	 		    $(".pw_ko").css("display", "inline-block");
+			    $(".pw_ok").css("display", "none");
+			    pwpass = 0;
+	 		  }
 	  	});
 	  	
 		function execDaumPostcode() {

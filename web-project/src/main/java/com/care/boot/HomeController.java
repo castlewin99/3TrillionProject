@@ -22,4 +22,10 @@ public class HomeController {
 	public String footer() {
 		return "default/footer";
 	}
+
+	@RequestMapping("test")
+	public String test() {
+		return "test";
+	}
+	
 }
