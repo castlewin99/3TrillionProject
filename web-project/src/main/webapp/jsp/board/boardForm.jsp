@@ -9,19 +9,22 @@
           <div class="container">
             <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
               <div class="col-lg-6">
-                <h1 class="h2 text-uppercase mb-0">Board</h1>
+                <h1 class="h2 text-uppercase mb-0">고객센터</h1>
               </div>
               <div class="col-lg-6 text-lg-end">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb justify-content-lg-end mb-0 px-0 bg-light">
                     <li class="breadcrumb-item"><a class="text-dark" href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-dark" href="cart.html">Board</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">고객센터</li>
                   </ol>
                 </nav>
               </div>
             </div>
           </div>
  		</section>
+ 		
+ 		
+        
 </div>
 
 
@@ -31,7 +34,7 @@
               
 				<div align="center">
 					<div class="header">
-					<h1 class="h2 text-uppercase mb-2" align="center">게시글 목록</h1>
+					<h1 class="h2 text-uppercase mb-2" align="center">문의 목록</h1>
 				</div>
 				
 						<c:choose>
