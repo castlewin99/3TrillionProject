@@ -3,10 +3,13 @@ package com.care.boot.member;
 public class MemberDTO {
 	private String id;
 	private String pw;
+	private String name;
+	private String postcode;
+	private String addr;
+	private String addrD;
+	private String phone;
 	private String confirm;
-	private String userName;
-	private String address;
-	private String mobile;
+	
 	
 	public String getId() {
 		return id;
@@ -20,29 +23,42 @@ public class MemberDTO {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPostcode() {
+		return postcode;
+	}
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	public String getAddrD() {
+		return addrD;
+	}
+	public void setAddrD(String addrD) {
+		this.addrD = addrD;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public String getConfirm() {
 		return confirm;
 	}
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
 	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getMobile() {
-		return mobile;
-	}
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
+	
 	
 }

@@ -58,7 +58,7 @@
           <div class="container">
             <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
               <div class="col-lg-6">
-                <h1 class="h2 text-uppercase mb-0">sign up</h1>
+                <h1 class="h2 text-uppercase mb-0">회원가입</h1>
               </div>
               <div class="col-lg-6 text-lg-end">
                 <nav aria-label="breadcrumb">
@@ -72,11 +72,11 @@
           </div>
         </section>
         <!-- BILLING ADDRESS-->
-        <form class="row row-cols-lg-auto g-3 align-items-center" action="registProc" method="post">
+        <form class="row row-cols-lg-auto g-3 align-items-center" action="registProc" method="post" id="f">
           <div class="col-lg-4">
           </div>
           <div class="col-lg-2">
-            <label class="form-label text-sm" for="id">ID </label>
+            <label class="form-label text-sm" for="id">아이디 </label>
             <input class="form-control form-control-lg" type="text" name="id" id="id" placeholder="your ID">
             <span class="id_ok form-label text-sm">사용 가능한 아이디입니다.</span>
             <span class="id_taken form-label text-sm">이미 사용중인 아이디입니다.</span>
@@ -86,14 +86,14 @@
           <div class="col-lg-4">
           </div>
           <div class="col-lg-2">
-            <label class="form-label text-sm" for="pw">Password </label>
-            <input class="form-control form-control-lg" type="password" id="pw" placeholder="e.g. qwer1234!">
+            <label class="form-label text-sm" for="pw">비밀번호 </label>
+            <input class="form-control form-control-lg" type="password" id="pw" name="pw" placeholder="e.g. qwer1234!">
             <span class="pw_ok form-label text-sm"> good</span>
             <span class="pw_ko form-label text-sm"> bad</span>
           </div>
           <div class="col-lg-2">
-            <label class="form-label text-sm" for="pwchk">Password Check </label>
-            <input class="form-control form-control-lg" type="password" id="pwchk" placeholder="e.g. qwer1234!">
+            <label class="form-label text-sm" for="pwchk">비밀번호 확인 </label>
+            <input class="form-control form-control-lg" type="password" id="pwchk" name="pwchk" placeholder="e.g. qwer1234!">
             <span class="pw_ok form-label text-sm">비밀 번호 확인이 일치 합니다.</span>
             <span class="pw_ko form-label text-sm">비밀 번호 확인이 일치하지 않다.</span>
           </div>
@@ -106,24 +106,24 @@
           <div class="col-lg-4">
           </div>
           <div class="col-lg-2">
-        	<label class="form-label text-sm" for="name">Name </label>
-            <input class="form-control form-control-lg" type="text" id="name" placeholder="Enter your name">
+        	<label class="form-label text-sm" for="name">이름 </label>
+            <input class="form-control form-control-lg" type="text" id="name" name="name" placeholder="Enter your name">
           </div>
           <div class="col-lg-6">
           </div>
           <div class="col-lg-4">
           </div>
           <div class="col-lg-2">
-            <label class="form-label text-sm" for="phone">phone number </label>
-            <input class="form-control form-control-lg" type="text" id="phone" placeholder="Your phone number">
+            <label class="form-label text-sm" for="phone">전화번호 </label>
+            <input class="form-control form-control-lg" type="text" id="phone" name="phone" placeholder="Your phone number">
           </div>
           <div class="col-lg-6">
           </div>
           <div class="col-lg-4">
           </div>
           <div class="col-lg-2">
-            <label class="form-label text-sm" for="postcode">postcode </label>
-            <input class="form-control form-control-lg" type="text" id="postcode" placeholder="옆에 우편번호 찾기 누르세요">
+            <label class="form-label text-sm" for="postcode">우편번호 </label>
+            <input class="form-control form-control-lg" type="text" id="postcode" name="postcode" placeholder="옆에 우편번호 찾기 누르세요" readonly>
           </div>
           <div class="col-lg-1">
             <label class="form-label text-sm" for="postcodeSearch"> </label>
@@ -134,23 +134,23 @@
           <div class="col-lg-4">
           </div>
           <div class="col-lg-4">
-            <label class="form-label text-sm" for="addr">address1 </label>
-            <input class="form-control form-control-lg" type="text" id="addr" placeholder="우편번호 찾기 누르면 자동으로 채워짐">
+            <label class="form-label text-sm" for="addr">주소 </label>
+            <input class="form-control form-control-lg" type="text" id="addr" name="addr" placeholder="우편번호 찾기 누르면 자동으로 채워짐" readonly>
           </div>
           <div class="col-lg-4">
           </div>
           <div class="col-lg-4">
           </div>
           <div class="col-lg-4">
-            <label class="form-label text-sm" for="addrD">address2 </label>
-            <input class="form-control form-control-lg" type="text" id="addrD" placeholder="상세주소 입력">
+            <label class="form-label text-sm" for="addrD">상세주소 </label>
+            <input class="form-control form-control-lg" type="text" id="addrD" name="addrD" placeholder="상세주소 입력">
           </div>
           <div class="col-lg-4">
           </div>
           <div class="col-lg-5">
           </div>
           <div class="py-5">
-            <button class="btn btn-dark" type="submit" onclick="validCheck()">회원가입</button>
+            <button class="btn btn-dark" type="button" onclick="validCheck()">회원가입</button>
             <button class="btn btn-danger" type="reset">취소</button>
           </div>
         </form>
@@ -167,6 +167,9 @@
       <script src = "js/jquery-3.7.1.min.js"></script>
       <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
       <script>
+      	var ipass=0;
+      	var pwpass=0;
+      	
 	  	$('#id').focusout(function(){
 		 	let id = $('#id').val();
 	  		
@@ -182,7 +185,6 @@
 	  				} else{
 	  					$(".id_taken").css("display", "inline-block");
 	  					$(".id_ok").css("display", "none");
-	  					alert("아이디를 다시 입력해주세요");
 	  					idpass=0;
 	  				}
 	  			},
@@ -194,18 +196,20 @@
 	  	
 	  	$('#pwchk').keyup(function(){
 	  		let pw = $('#pw').val();
-		 		let pwchk = $('#pwchk').val();
+		 	  let pwchk = $('#pwchk').val();
 	  		
-		 		if(pw == pwchk){
-		 			$(".pw_ok").css("display", "inline-block");
-				$(".pw_ko").css("display", "none");
-				pwpass = 1;
-		 		} if (pw != pwchk){
-		 			$(".pw_ko").css("display", "inline-block");
-				$(".pw_ok").css("display", "none");
-				pwpass = 0;
-		 		}
+  	 		if(pw == pwchk){
+	   			$(".pw_ok").css("display", "inline-block");
+		  	  $(".pw_ko").css("display", "none");
+			    pwpass = 1;
+	 		    } 
+        if (pw != pwchk){
+	 		    $(".pw_ko").css("display", "inline-block");
+			    $(".pw_ok").css("display", "none");
+			    pwpass = 0;
+	 		  }
 	  	});
+	  	
 		function execDaumPostcode() {
 			new daum.Postcode({
 	      		oncomplete: function(data) {
@@ -217,71 +221,62 @@
 	
 	                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
 	                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-	                    addr = data.roadaddr;
+	                    addr = data.roadAddress;
 	                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-	                    addr = data.jibunaddr;
+	                    addr = data.jibunAddress;
 	                }
 	
 	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
 	                document.getElementById('postcode').value = data.zonecode;
-	                document.getElementById("addr").value = addr;
+	                document.getElementById('addr').value = addr;
 	
 	                // 커서를 상세주소 필드로 이동한다.
-	                document.getElementById("addrDetail").focus();
+	                document.getElementById('addrD').focus();
 		        }
 			}).open();
 		}
+		
 		function validCheck(){
 			var id = $('#id').val();
-			var id = $('#pw').val();
-			var id = $('#name').val();
-			var id = $('#phone').val();
-			var id = $('#postcode').val();
-			var id = $('#addr').val();
-			var id = $('#addrD').val();
+			var pw = $('#pw').val();
+			var name = $('#name').val();
+			var phone = $('#phone').val();
+			var pc = $('#postcode').val();
+			var addrD = $('#addrD').val();
 			
-			if(id.length == 0){
-				alert("아이디를 입력해주세요");
+			if(id.length == 0 || idpass == 0){
+				alert("아이디를 확인해주세요");
 				$('#id').focus();
-				return false;
+			} else if(pw.length == 0 || pwpass == 0){
+				alert("비밀번호를 확인해주세요");
+				$('#pw').focus();
+			} else if(name.length == 0){
+				alert("이름를 입력해주세요");
+				$('#name').focus();
+			} else if(phone.length == 0){
+				alert("전화번호를 입력해주세요");
+				$('#phone').focus();
+			} else if(pc.length == 0){
+				alert("우편번호를 입력해주세요");
+				$('#postcode').focus();
+			} else if(addrD.length == 0){
+				alert("상세주소를 입력해주세요");
+				$('#addrD').focus();
+			} else if(confirm("회원가입 진행하시겠습니까?")){
+				var f = document.getElementById('f');
+				f.submit();
+				alert("회원 가입되었습니다.")
 			}
-			if(pw.length == 0){
-				alert("아이디를 입력해주세요");
-				$('#id').focus();
-				return false;
-			}
-			if(name.length == 0){
-				alert("아이디를 입력해주세요");
-				$('#id').focus();
-				return false;
-			}
-			if(phone.length == 0){
-				alert("아이디를 입력해주세요");
-				$('#id').focus();
-				return false;
-			}
-			if(postcode.length == 0){
-				alert("아이디를 입력해주세요");
-				$('#id').focus();
-				return false;
-			}
-			if(addrD.length == 0){
-				alert("아이디를 입력해주세요");
-				$('#id').focus();
-				return false;
-			}
-			if(confirm("회원가입 진행하시겠습니까?")){
-				
-			}
+			return false;
 			
 		}
 	  </script>
       <script>
-        // ------------------------------------------------------- //
+        // ——————————————————————————— //
         //   Inject SVG Sprite - 
         //   see more here 
         //   https://css-tricks.com/ajaxing-svg-sprite/
-        // ------------------------------------------------------ //
+        // ——————————————————————————— //
         function injectSvgSprite(path) {
         
             var ajax = new XMLHttpRequest();
@@ -301,7 +296,7 @@
         injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
         
       </script>
-      <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+      <!——————————————————————————— FontAwesome CSS - loading as last, so it doesn't block rendering———————————————————————————>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     </div>
   </body>

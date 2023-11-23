@@ -6,15 +6,24 @@
 	<resultMap type="com.care.boot.member.MemberDTO" id="member">
 		<id column="id" property="id"/>
 		<result column="pw" property="pw"/>
-		<result column="user_name" property="userName"/>
-		<result column="address" property="address"/>
-		<result column="mobile" property="mobile"/>
+		<result column="user_name" property="name"/>
+		<result column="address" property="addr"/>
+		<result column="mobile" property="phone"/>
 	</resultMap>
 	
 	<insert id="registProc">
 		INSERT INTO member 
-		VALUES(#{id}, #{pw}, #{userName}, #{address}, #{mobile})
+		VALUES(#{id}, #{pw}, #{name}, #{addr}, #{phone})
 	</insert>
+	
+	<select id="idCheck" parameterType="String" resultType="int">
+		SELECT 
+			COUNT(id)
+		FROM
+			member
+		WHERE
+			id=#{id}
+	</select>
 	
 	<select id="login" resultMap="member">
 		SELECT * FROM member WHERE id=#{id}
@@ -59,7 +68,7 @@
 	
 	<update id="updateProc">
 		UPDATE member 
-		SET pw=#{pw}, mobile=#{mobile}, user_name=#{userName}, address=#{address} 
+		SET pw=#{pw}, mobile=#{phone}, user_name=#{name}, address=#{addr} 
 		WHERE id=#{id}
 	</update>
 	
