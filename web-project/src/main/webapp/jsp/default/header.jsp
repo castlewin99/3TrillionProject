@@ -44,10 +44,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                  <!-- Link--><a class="nav-link " href="${context }index">홈</a>
-                </li>
-                <li class="nav-item">
-                  <!-- Link--><a class="nav-link" href="${context }memberInfo">MemberInfo</a>
+                  <!-- Link--><a class="nav-link " href="${context }index">HOME</a>
                 </li>
               </ul>
 
@@ -55,13 +52,13 @@
                 	<c:choose>
 						<c:when test="${empty sessionScope.id }">
 							<li class="nav-item"><a class="nav-link" href="${context }login"> <i class="fas fa-user me-1 text-gray fw-normal"></i>로그인</a></li>
+							<li class="nav-item"><a class="nav-link" href="${context }regist">회원가입</a></li>
 						</c:when>
 						<c:otherwise>
-							<li class="nav-item"><a class="nav-link" onclick="location.href='userInfo2?id=${member.id }&currentPage=${currentPage }'"><i class="fas fa-user me-1 text-gray fw-normal"></i>${sessionScope.id } 님</a></li>
+							<li class="nav-item"><a class="nav-link" href="${context }memberInfo" onclick="location.href='userInfo2?id=${member.id }&currentPage=${currentPage }'"><i class="fas fa-user me-1 text-gray fw-normal"></i>${sessionScope.id } 님</a></li>
 							<li class="nav-item"><a class="nav-link" href="${context }logout">로그아웃</a></li>
 						</c:otherwise>
 					</c:choose>
-					<li class="nav-item"><a class="nav-link" href="${context }regist">회원가입</a></li> 
 					<li class="nav-item"><a class="nav-link" href="${context }boardForm">고객센터</a></li>              
                 	<li class="nav-item"><a class="nav-link" href="index.jsp"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>장바구니<small class="text-gray fw-normal">(2)</small></a></li>
               </ul>
