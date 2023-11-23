@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Boutique | Ecommerce bootstrap template</title>
+    <title>3TRILLION MALL</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -44,40 +44,26 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                  <!-- Link--><a class="nav-link " href="${context }index">Home</a>
-                </li>
-                <li class="nav-item">
-                  <!-- Link--><a class="nav-link" href="${context }regist">Regist</a>
+                  <!-- Link--><a class="nav-link " href="${context }index">홈</a>
                 </li>
                 <li class="nav-item">
                   <!-- Link--><a class="nav-link" href="${context }memberInfo">MemberInfo</a>
                 </li>
-                <li class="nav-item">
-                  <!-- Link--><a class="nav-link" href="${context }boardForm">Board</a>
-                </li>
-                <li class="nav-item">
-                  <!-- Link--><a class="nav-link" href="detail.html">Product detail</a>
-                </li>
-                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-                  <div class="dropdown-menu mt-3 shadow-sm" aria-labelledby="pagesDropdown"><a class="dropdown-item border-0 transition-link" href="index.html">Homepage</a><a class="dropdown-item border-0 transition-link" href="shop.html">Category</a><a class="dropdown-item border-0 transition-link" href="detail.html">Product detail</a><a class="dropdown-item border-0 transition-link" href="cart.html">Shopping cart</a><a class="dropdown-item border-0 transition-link" href="checkout.html">Checkout</a></div>
-                </li>
               </ul>
 
-              <ul class="navbar-nav ms-auto">               
-                <li class="nav-item"><a class="nav-link" href="cart.html"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Cart<small class="text-gray fw-normal">(2)</small></a></li>
-                <li class="nav-item"><a class="nav-link" href="#!"> <i class="far fa-heart me-1"></i><small class="text-gray fw-normal"> (0)</small></a></li>
-                
+              <ul class="navbar-nav ms-auto">         
                 	<c:choose>
 						<c:when test="${empty sessionScope.id }">
-							<li class="nav-item"><a class="nav-link" href="${context }login"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Login</a></li>
+							<li class="nav-item"><a class="nav-link" href="${context }login"> <i class="fas fa-user me-1 text-gray fw-normal"></i>로그인</a></li>
 						</c:when>
 						<c:otherwise>
 							<li class="nav-item"><a class="nav-link" onclick="location.href='userInfo2?id=${member.id }&currentPage=${currentPage }'"><i class="fas fa-user me-1 text-gray fw-normal"></i>${sessionScope.id } 님</a></li>
-							<li class="nav-item"><a class="nav-link" href="${context }logout">Logout</a></li>
+							<li class="nav-item"><a class="nav-link" href="${context }logout">로그아웃</a></li>
 						</c:otherwise>
 					</c:choose>
-					
-					
+					<li class="nav-item"><a class="nav-link" href="${context }regist">회원가입</a></li> 
+					<li class="nav-item"><a class="nav-link" href="${context }memberInfo">고객센터</a></li>              
+                	<li class="nav-item"><a class="nav-link" href="index.jsp"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>장바구니<small class="text-gray fw-normal">(2)</small></a></li>
               </ul>
             </div>
           </nav>
