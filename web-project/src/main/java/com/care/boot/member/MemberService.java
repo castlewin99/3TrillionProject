@@ -18,19 +18,6 @@ public class MemberService {
 	
 	// [ Regist ]
 	public String registProc(MemberDTO member) {
-		if(member.getId() == null || member.getId().trim().isEmpty()) {
-			return "아이디를 입력하세요.";
-		}
-		if(member.getPw() == null || member.getPw().trim().isEmpty()) {
-			return "비밀번호를 입력하세요.";
-		}
-		if(member.getPw().equals(member.getConfirm()) == false) {
-			return "두 비밀번호를 일치하여 입력하세요.";
-		}
-		if(member.getName() == null || member.getName().trim().isEmpty()) {
-			return "이름을 입력하세요.";
-		}
-		
 		MemberDTO check = mapper.login(member.getId());
 		if(check != null) {
 			return "이미 사용중인 아이디 입니다.";
@@ -54,6 +41,7 @@ public class MemberService {
 		System.out.println("암호문 길이: " + secretPass.length());
 		
 		int result = mapper.registProc(member);
+		System.out.println("result: " + result);
 		if(result == 1)
 			return "회원 등록 완료";
 		
@@ -65,9 +53,6 @@ public class MemberService {
 		System.out.println("cnt: " + result);
 		return result;
 	}
-	
-	
-	
 	
 	// [ Login & Logout ]
 		public String loginProc(String id, String pw) {
@@ -82,9 +67,9 @@ public class MemberService {
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 			if(check != null && encoder.matches(pw, check.getPw()) == true) {
 				session.setAttribute("id", check.getId());
-				session.setAttribute("userName", check.getName());
-				session.setAttribute("address", check.getAddr());
-				session.setAttribute("mobile", check.getPhone());
+				session.setAttribute("userName", check.getUserName());
+				session.setAttribute("address", check.getAddress());
+				session.setAttribute("mobile", check.getMobile());
 				/*
 				 * session.setAttribute("member", check);
 				 * ${sessionScope.member.id}
@@ -140,12 +125,12 @@ public class MemberService {
 			}
 			
 			MemberDTO member = mapper.login(id);
-			if(member.getAddr() != null && member.getAddr().isEmpty() == false) {
-				String[] address = member.getAddr().split(",");
+			if(member.getAddress() != null && member.getAddress().isEmpty() == false) {
+				String[] address = member.getAddress().split(",");
 				System.out.println(address.length);
 				if(address.length >= 2) {
 					model.addAttribute("postcode", address[0]);
-					member.setAddr(address[1]);
+					member.setAddress(address[1]);
 					if(address.length == 3) {
 						model.addAttribute("detailAddress", address[2]);
 					}
@@ -167,12 +152,12 @@ public class MemberService {
 			}
 			
 			MemberDTO member = mapper.login(id);
-			if(member.getAddr() != null && member.getAddr().isEmpty() == false) {
-				String[] address = member.getAddr().split(",");
+			if(member.getAddress() != null && member.getAddress().isEmpty() == false) {
+				String[] address = member.getAddress().split(",");
 				System.out.println(address.length);
 				if(address.length >= 2) {
 					model.addAttribute("postcode", address[0]);
-					member.setAddr(address[1]);
+					member.setAddress(address[1]);
 					if(address.length == 3) {
 						model.addAttribute("detailAddress", address[2]);
 					}
@@ -190,7 +175,7 @@ public class MemberService {
 			if(member.getPw().equals(member.getConfirm()) == false) {
 				return "두 비밀번호를 일치하여 입력하세요.";
 			}
-			if(member.getName() == null || member.getName().trim().isEmpty()) {
+			if(member.getUserName() == null || member.getUserName().trim().isEmpty()) {
 				return "이름을 입력하세요.";
 			}
 			/* 암호화 과정 */
@@ -225,8 +210,6 @@ public class MemberService {
 			
 			return "아이디 또는 비밀번호를 확인 후 입력하세요";
 		}
-		
-		
 	}
 
 
