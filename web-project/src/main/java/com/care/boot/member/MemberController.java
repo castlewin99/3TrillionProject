@@ -36,10 +36,16 @@ public class MemberController {
 	public String registProc(MemberDTO member, String postcode, 
 			String detailAddress, Model model, RedirectAttributes ra) {
 		
-		if(member.getAddr() != null && member.getAddr().trim().isEmpty() == false)
-			member.setAddr( postcode + "," + member.getAddr() + "," + detailAddress);
-		
+		if(member.getAddress() != null && member.getAddress().trim().isEmpty() == false)
+			member.setAddress( postcode + "," + member.getAddress() + "," + detailAddress);
+		System.out.println("id: " + member.getId());
+		System.out.println("pw: " + member.getPw());
+		System.out.println("name: " + member.getUserName());
+		System.out.println("pc: " + member.getPostcode());
+		System.out.println("add: " + member.getAddress());
+
 		String msg = service.registProc(member);
+		System.out.println("msg: " + msg);
 		
 		if(msg.equals("회원 등록 완료")) {
 			ra.addFlashAttribute("msg", msg);

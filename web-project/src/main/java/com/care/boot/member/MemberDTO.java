@@ -3,13 +3,11 @@ package com.care.boot.member;
 public class MemberDTO {
 	private String id;
 	private String pw;
-	private String name;
+	private String userName;
 	private String postcode;
-	private String addr;
-	private String addrD;
-	private String phone;
+	private String address;
+	private String mobile;
 	private String confirm;
-	
 	
 	public String getId() {
 		return id;
@@ -23,11 +21,11 @@ public class MemberDTO {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	public String getName() {
-		return name;
+	public String getUserName() {
+		return userName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getPostcode() {
 		return postcode;
@@ -35,23 +33,17 @@ public class MemberDTO {
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
-	public String getAddr() {
-		return addr;
+	public String getAddress() {
+		return address;
 	}
-	public void setAddr(String addr) {
-		this.addr = addr;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public String getAddrD() {
-		return addrD;
+	public String getMobile() {
+		return mobile;
 	}
-	public void setAddrD(String addrD) {
-		this.addrD = addrD;
-	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 	public String getConfirm() {
 		return confirm;
@@ -59,6 +51,4 @@ public class MemberDTO {
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
 	}
-	
-	
 }

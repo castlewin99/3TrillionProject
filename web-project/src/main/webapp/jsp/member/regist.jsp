@@ -106,16 +106,16 @@
           <div class="col-lg-4">
           </div>
           <div class="col-lg-2">
-        	<label class="form-label text-sm" for="name">이름 </label>
-            <input class="form-control form-control-lg" type="text" id="name" name="name" placeholder="Enter your name">
+        	<label class="form-label text-sm" for="userName">이름 </label>
+            <input class="form-control form-control-lg" type="text" id="userName" name="userName" placeholder="Enter your name">
           </div>
           <div class="col-lg-6">
           </div>
           <div class="col-lg-4">
           </div>
           <div class="col-lg-2">
-            <label class="form-label text-sm" for="phone">전화번호 </label>
-            <input class="form-control form-control-lg" type="text" id="phone" name="phone" placeholder="Your phone number">
+            <label class="form-label text-sm" for="mobile">전화번호 </label>
+            <input class="form-control form-control-lg" type="text" id="mobile" name="mobile" placeholder="Your phone number">
           </div>
           <div class="col-lg-6">
           </div>
@@ -134,16 +134,16 @@
           <div class="col-lg-4">
           </div>
           <div class="col-lg-4">
-            <label class="form-label text-sm" for="addr">주소 </label>
-            <input class="form-control form-control-lg" type="text" id="addr" name="addr" placeholder="우편번호 찾기 누르면 자동으로 채워짐" readonly>
+            <label class="form-label text-sm" for="address">주소 </label>
+            <input class="form-control form-control-lg" type="text" id="address" name="address" placeholder="우편번호 찾기 누르면 자동으로 채워짐" readonly>
           </div>
           <div class="col-lg-4">
           </div>
           <div class="col-lg-4">
           </div>
           <div class="col-lg-4">
-            <label class="form-label text-sm" for="addrD">상세주소 </label>
-            <input class="form-control form-control-lg" type="text" id="addrD" name="addrD" placeholder="상세주소 입력">
+            <label class="form-label text-sm" for="detailAddress">상세주소 </label>
+            <input class="form-control form-control-lg" type="text" id="detailAddress" name="detailAddress" placeholder="상세주소 입력">
           </div>
           <div class="col-lg-4">
           </div>
@@ -217,21 +217,21 @@
 	
 	                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
 	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-	                var addr = ''; // 주소 변수
+	                var address = ''; // 주소 변수
 	
 	                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
 	                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-	                    addr = data.roadAddress;
+	                    address = data.roadAddress;
 	                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-	                    addr = data.jibunAddress;
+	                    address = data.jibunAddress;
 	                }
 	
 	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
 	                document.getElementById('postcode').value = data.zonecode;
-	                document.getElementById('addr').value = addr;
+	                document.getElementById('address').value = address;
 	
 	                // 커서를 상세주소 필드로 이동한다.
-	                document.getElementById('addrD').focus();
+	                document.getElementById('detailAddress').focus();
 		        }
 			}).open();
 		}
@@ -239,10 +239,10 @@
 		function validCheck(){
 			var id = $('#id').val();
 			var pw = $('#pw').val();
-			var name = $('#name').val();
-			var phone = $('#phone').val();
+			var name = $('#userName').val();
+			var phone = $('#mobile').val();
 			var pc = $('#postcode').val();
-			var addrD = $('#addrD').val();
+			var addrD = $('#detailAddress').val();
 			
 			if(id.length == 0 || idpass == 0){
 				alert("아이디를 확인해주세요");
