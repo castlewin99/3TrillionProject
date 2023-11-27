@@ -12,13 +12,13 @@
           <div class="container">
             <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
               <div class="col-lg-6">
-                <h1 class="h2 text-uppercase mb-0">MemberList</h1>
+                <h1 class="h2 text-uppercase mb-0">회원 정보</h1>
               </div>
               <div class="col-lg-6 text-lg-end">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb justify-content-lg-end mb-0 px-0 bg-light">
                     <li class="breadcrumb-item"><a class="text-dark" href="index">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">MemberList</li>
+                    <li class="breadcrumb-item active" aria-current="page">회원 정보</li>
                   </ol>
                 </nav>
               </div>
@@ -53,8 +53,9 @@
 							<th>전화번호</th>
 						</tr>
 					</thead>
+					
 					<tbody>
-						<c:forEach var="member" items="${ members}">
+						<c:forEach var="member" items="${members}">
 							<tr align="center">
 								<td onclick="location.href='userInfo?id=${member.id }&currentPage=${currentPage }'">
 									${member.id }
@@ -106,8 +107,6 @@
 
 	 
 	</section>
-	
-	
 	
 </div>
 <c:import url="/footer" />
